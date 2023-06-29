@@ -9,12 +9,17 @@ import categoryRoutes from './routes/categoryRoute.js';
 import productRoutes from "./routes/productRoutes.js";
 import cors from'cors';
 import path from 'path';
+import { fileURLTOPATH } from 'url';
 
 //configure env
 dotenv.config();
 
 //databse config 
 connectDb();
+
+//esmodule fix
+const __filename = fileURLTOPATH(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object
 const app = express()
